@@ -24,7 +24,7 @@ EGAMESTATES g_eGameState = S_SPLASHSCREEN;
 double  g_dBounceTime; // this is to prevent key bouncing, so we won't trigger keypresses more than once
 
 // Console object
-Console g_Console(80, 25, "SP1 Framework");
+Console g_Console(120, 40, "SP1 Framework");
 
 //--------------------------------------------------------------
 // Purpose  : Initialisation function
@@ -44,8 +44,8 @@ void init( void )
 
 	loadMap();
 
-    g_sChar.m_cLocation.X = g_Console.getConsoleSize().X / 2;
-    g_sChar.m_cLocation.Y = g_Console.getConsoleSize().Y / 2;
+    g_sChar.m_cLocation.X = 3;
+    g_sChar.m_cLocation.Y = 15;
     g_sChar.m_bActive = true;
     // sets the width, height and the font name to use in the console
     g_Console.setConsoleFont(0, 16, L"Consolas");
@@ -239,7 +239,7 @@ void loadMap() // level 1
 {
 	//pushing text file into vector
 	string line;
-	ifstream myfile("map.txt");
+	ifstream myfile("Level1_v2.txt");
 
 	//storing text text file into vector string
 	if (myfile.is_open())
@@ -248,7 +248,7 @@ void loadMap() // level 1
 		{
 			for (int i = 0; i < line.length(); i++)
 			{
-				if (line[i] == '@')
+				if (line[i] == '#')
 				{
 					line[i] = 219;
 				}

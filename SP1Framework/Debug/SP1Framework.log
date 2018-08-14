@@ -2,8 +2,5 @@
 d:\users\l533\desktop\sp1framework\sp1framework\game.cpp(249): warning C4018: '<': signed/unsigned mismatch
 d:\users\l533\desktop\sp1framework\sp1framework\game.cpp(253): warning C4309: '=': truncation of constant value
 d:\users\l533\desktop\sp1framework\sp1framework\game.cpp(269): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  main.cpp
   SP1Framework.vcxproj -> D:\Users\l533\Desktop\SP1Framework\Debug\SP1Framework.exe
   SP1Framework.vcxproj -> D:\Users\l533\Desktop\SP1Framework\Debug\SP1Framework.pdb (Full PDB)
