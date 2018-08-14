@@ -107,3 +107,4 @@ It could be due to too much flushing of the buffer to the screen. Make sure that
 **Unicode**  
 Right now, there is no support for unicode, but talk to me if you really need unicode, and we see if we can try out some stuff.
 
+# stdpject
