@@ -160,27 +160,35 @@ void moveCharacter()
     // providing a beep sound whenver we shift the character
     if (g_abKeyPressed[K_UP] && g_sChar.m_cLocation.Y > 0)
     {
-        //Beep(1440, 30);
-        g_sChar.m_cLocation.Y--;
-        bSomethingHappened = true;
+		if (map[g_sChar.m_cLocation.Y - 1][g_sChar.m_cLocation.X] != (char)219){
+			//Beep(1440, 30);
+			g_sChar.m_cLocation.Y--;
+			bSomethingHappened = true;
+		}
     }
     if (g_abKeyPressed[K_LEFT] && g_sChar.m_cLocation.X > 0)
     {
-        //Beep(1440, 30);
-        g_sChar.m_cLocation.X--;
-        bSomethingHappened = true;
+		if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X -1] != (char)219) {
+			//Beep(1440, 30);
+			g_sChar.m_cLocation.X--;
+			bSomethingHappened = true;
+		}
     }
     if (g_abKeyPressed[K_DOWN] && g_sChar.m_cLocation.Y < g_Console.getConsoleSize().Y - 1)
     {
-        //Beep(1440, 30);
-        g_sChar.m_cLocation.Y++;
-        bSomethingHappened = true;
+		if (map[g_sChar.m_cLocation.Y + 1][g_sChar.m_cLocation.X] != (char)219) {
+			//Beep(1440, 30);
+			g_sChar.m_cLocation.Y++;
+			bSomethingHappened = true;
+		}
     }
     if (g_abKeyPressed[K_RIGHT] && g_sChar.m_cLocation.X < g_Console.getConsoleSize().X - 1)
     {
-        //Beep(1440, 30);
-        g_sChar.m_cLocation.X++;
-        bSomethingHappened = true;
+		if (map[g_sChar.m_cLocation.Y][g_sChar.m_cLocation.X + 1] != (char)219) {
+			//Beep(1440, 30);
+			g_sChar.m_cLocation.X++;
+			bSomethingHappened = true;
+		}
     }
     if (g_abKeyPressed[K_SPACE])
     {
@@ -271,11 +279,15 @@ void renderCharacter()
 {
     // Draw the location of the character
     WORD charColor = 0x0C;
+	COORD c;
+
+	c.X = g_sChar.m_cLocation.X;
+	c.Y = g_sChar.m_cLocation.Y + 1;
     if (g_sChar.m_bActive)
     {
         charColor = 0x0A;
     }
-    g_Console.writeToBuffer(g_sChar.m_cLocation, (char)80, charColor);
+    g_Console.writeToBuffer(c, (char)80, charColor);
 }
 
 //---------------------------------Life Points---------------------------------
